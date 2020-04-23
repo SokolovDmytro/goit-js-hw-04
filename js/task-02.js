@@ -1,11 +1,34 @@
 // 'use strict';
 
-// const logItems = function (array) {
-//   for (let i = 0; i < array.length; i += 1) {
-//     console.log(i + 1 + ' ' + array[i]);
-//   }
+// // Исправь ошибки которые будут в консоли, чтобы скрипт заработал.
+
+// const inventory = {
+//   items: ['Knife', 'Gas mask'],
+//   add(itemName) {
+//     console.log(`Adding ${itemName} to inventory`);
+
+//     this.items.push(itemName);
+//   },
+//   remove(itemName) {
+//     console.log(`Removing ${itemName} from inventory`);
+
+//     this.items = this.items.filter(item => item !== itemName);
+//   },
 // };
 
-// logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
+// const invokeInventoryAction = function(itemName, action) {
+//   console.log(`Invoking action on ${itemName}`);
+//   action(itemName);
+// };
 
-// logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+// invokeInventoryAction('Medkit', inventory.add);
+// // Invoking action on Medkit
+// // Adding Medkit to inventory
+
+// console.log(inventory.items); // ['Knife', 'Gas mask', 'Medkit']
+
+// invokeInventoryAction('Gas mask', inventory.remove);
+// // Invoking action on Gas mask
+// // Removing Gas mask from inventory
+
+// console.log(inventory.items); // ['Knife', 'Medkit']

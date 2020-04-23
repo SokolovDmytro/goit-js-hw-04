@@ -1,11 +1,29 @@
-// 'use strict';
+'use strict';
 
-// const logItems = function (array) {
-//   for (let i = 0; i < array.length; i += 1) {
-//     console.log(i + 1 + ' ' + array[i]);
-//   }
-// };
+// Расставь отсутствующие this в методах объекта account.
 
-// logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
+const account = {
+  owner: 'Mango',
+  balance: 24000,
+  discount: 0.1,
+  orders: ['order-1', 'order-2', 'order-3'],
+  changeDiscount(value) {
+    this.discount = value;
+  },
+  showOrders() {
+    return this.orders;
+  },
+  addOrder(cost, order) {
+    this.balance -= cost;
+    this.orders.push(order);
+  },
+};
 
-// logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+account.changeDiscount(0.15);
+console.log(account.discount); // 0.15
+
+console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
+
+account.addOrder(5000, 'order-4');
+console.log(account.balance); // 19000
+console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
